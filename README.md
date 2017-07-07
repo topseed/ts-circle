@@ -18,6 +18,10 @@ TODO: Describe the installation process
 -->
 ```html
 <ts-circle></ts-circle>
+<script>
+registerComp()
+document.querySelector('ts-circle').value(55)
+</script>
 ```
 
 ## Contributing
