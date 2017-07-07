@@ -1,0 +1,66 @@
+
+<script src="https://cdn.rawgit.com/topseed/ts-circle/master/vendor/circlesMOD.js"></script>
+<script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/flyd.min.js"></script>
+<script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js"></script>
+<script src="https://unpkg.com/topseed-util@24.0.0/PLX.js"></script>
+<template id="xcircle-el">
+  <style>.circle-el__title { color: orange; }</style><span class="circle-el__title">My Circle Title</span>
+  <p></p>
+  <div>
+    <div id="c1"></div>
+  </div>
+</template>
+<!--http://github.com/lugolabs/circles-->
+<script>
+  var CircleEl = Object.create(HTMLElement.prototype) //prototype
+  var circleEl = null //instance, to keep state
+  
+  registerComp = function(){
+  	TW.registerComp('circle-el', CircleEl)
+  }
+  
+  CircleEl.loadedLib = function() {
+  
+  	if (circleEl._loaded) return
+  	circleEl._loaded = true
+  	console.log('loaded')
+  	
+  	var c = circleEl._shadow.getElementById('c1')
+  	circleEl.circle = Circles.create({
+  		el:                  c,
+  		radius:              60,
+  		value:               42,
+  		maxValue:            100,
+  		width:               10,
+  		text:                function(value){return value + '%';},
+  		colors:              ['#D3B6C6', '#4B253A'],
+  		duration:            400,
+  		wrpClass:            'circles-wrp',
+  		textClass:           'circles-text',
+  		valueStrokeClass:    'circles-valueStroke',
+  		maxValueStrokeClass: 'circles-maxValueStroke',
+  		styleWrapper:        true,
+  		styleText:           true
+  		})
+  }//loaded
+  
+  CircleEl.createdCallback = function() {
+  	circleEl = this
+  	circleEl._shadow = TW.attachShadow(circleEl, '#xcircle-el')
+  	circleEl._loaded = false //trap
+  	//TS.load('https://cdn.rawgit.com/topseed/ts-circle/master/vendor/circlesMOD.js')
+  	//.then(circleEl.loadedLib)
+  	circleEl.loadedLib()
+  	
+  }//created
+  
+  CircleEl.init = function(_blx) {
+  	_blx.on('circleVal', function(data) { //incoming
+  		circleEl.circle.update(data.circleVal)
+  	})
+  }
+  
+  CircleEl.value = function(val) {
+  	circleEl.circle.update(val)
+  }
+</script>
