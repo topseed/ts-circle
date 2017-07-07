@@ -2,7 +2,10 @@
 A standard web component to display a circle stat
 
 ## Installation
-TODO: Describe the installation process
+
+- Add `<link rel="import" href="https://rawgit.com/topseed/ts-circle/master/ts-circle.html">` to the `head` of your page.
+- In the `body`, place `<ts-circle></ts-circle>` and `script` as shown below.
+
 ## Usage
 
 <!--
@@ -10,7 +13,6 @@ TODO: Describe the installation process
 <custom-element-demo>
   <template>
     <link rel="import" href="ts-circle.html">
-    <script>registerComp()</script>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -19,8 +21,8 @@ TODO: Describe the installation process
 ```html
 <ts-circle></ts-circle>
 <script>
-registerComp()
-document.querySelector('ts-circle').value(55)
+	document.registerElement('ts-circle', {prototype: CircleEl})
+	document.querySelector('ts-circle').value(55)
 </script>
 ```
 

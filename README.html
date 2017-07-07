@@ -1,14 +1,16 @@
 <h1 id="ts-circle">ts-circle</h1>
 <p>A standard web component to display a circle stat</p>
 <h2 id="installation">Installation</h2>
-<p>TODO: Describe the installation process</p>
+<ul>
+<li>Add <code>&lt;link rel=&quot;import&quot; href=&quot;https://rawgit.com/topseed/ts-circle/master/ts-circle.html&quot;&gt;</code> to the <code>head</code> of your page.</li>
+<li>In the <code>body</code>, place <code>&lt;ts-circle&gt;&lt;/ts-circle&gt;</code> and <code>script</code> as shown below.</li>
+</ul>
 <h2 id="usage">Usage</h2>
 <!--
 ```
 <custom-element-demo>
   <template>
     <link rel="import" href="ts-circle.html">
-    <script>registerComp()</script>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -16,8 +18,8 @@
 -->
 <pre><code class="lang-html">&lt;ts-circle&gt;&lt;/ts-circle&gt;
 &lt;script&gt;
-registerComp()
-document.querySelector(&#39;ts-circle&#39;).value(55)
+    document.registerElement(&#39;ts-circle&#39;, {prototype: CircleEl})
+    document.querySelector(&#39;ts-circle&#39;).value(55)
 &lt;/script&gt;
 </code></pre>
 <h2 id="contributing">Contributing</h2>
