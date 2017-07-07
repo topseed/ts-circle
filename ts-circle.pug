@@ -3,10 +3,10 @@ script(src='https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/flyd.min.
 script(src='https://cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js')
 script(src='https://unpkg.com/topseed-util@24.0.0/PLX.js')
 
-template#xcircle-el
+template#xts-circle
 	style.
-		.circle-el__title { color: orange; }
-	span.circle-el__title My Circle Title
+		.ts-circle__title { color: orange; }
+	span.ts-circle__title My Circle Title
 	p
 	div
 		#c1
@@ -18,7 +18,7 @@ script.
 	var circleEl = null //instance, to keep state
 
 	registerComp = function(){
-		TW.registerComp('circle-el', CircleEl)
+		TW.registerComp('ts-circle', CircleEl)
 	}
 
 	CircleEl.loadedLib = function() {
@@ -48,7 +48,7 @@ script.
 
 	CircleEl.createdCallback = function() {
 		circleEl = this
-		circleEl._shadow = TW.attachShadow(circleEl, '#xcircle-el')
+		circleEl._shadow = TW.attachShadow(circleEl, '#xts-circle')
 		circleEl._loaded = false //trap
 		//TS.load('https://cdn.rawgit.com/topseed/ts-circle/master/vendor/circlesMOD.js')
 		//.then(circleEl.loadedLib)

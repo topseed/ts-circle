@@ -1,10 +1,11 @@
 {
 	"name": "ts-circle",
-	"version": "^0.9.1",
+	"version": "^0.9.2",
 	"private": true,
 	"ignore": [
 		"**/.*",
-		"prepros-6.config"
+		"prepros-6.config",
+		"ts-circle.pug"
 	],
 	"dependencies": {}
 }	
