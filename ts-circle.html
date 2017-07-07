@@ -3,7 +3,7 @@
 <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/vendor/flyd.min.js"></script>
 <script src="https://cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js"></script>
 <script src="https://unpkg.com/topseed-util@24.0.0/PLX.js"></script>
-<template id="xts-circle">
+<template id="tsx-circle">
   <style>.ts-circle__title { color: orange; }</style><span class="ts-circle__title">My Circle Title</span>
   <p></p>
   <div>
@@ -46,7 +46,7 @@
   
   CircleEl.createdCallback = function() {
   	circleEl = this
-  	circleEl._shadow = TW.attachShadow(circleEl, '#xts-circle')
+  	circleEl._shadow = TW.attachShadow(circleEl, '#tsx-circle')
   	circleEl._loaded = false //trap
   	//TS.load('https://cdn.rawgit.com/topseed/ts-circle/master/vendor/circlesMOD.js')
   	//.then(circleEl.loadedLib)

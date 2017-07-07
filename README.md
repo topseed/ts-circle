@@ -22,6 +22,8 @@ A standard web component to display a circle stat
 <ts-circle></ts-circle>
 <script>
 	document.registerElement('ts-circle', {prototype: CircleEl})
+	var Circle =  document.registerElement('ts-circle', {prototype: CircleEl})
+	document.body.appendChild(new Circle())
 	var circle = document.querySelector('ts-circle')
 	circle.value(55)
 </script>
