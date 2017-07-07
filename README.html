@@ -19,7 +19,8 @@
 <pre><code class="lang-html">&lt;ts-circle&gt;&lt;/ts-circle&gt;
 &lt;script&gt;
     document.registerElement(&#39;ts-circle&#39;, {prototype: CircleEl})
-    document.querySelector(&#39;ts-circle&#39;).value(55)
+    var circle = document.querySelector(&#39;ts-circle&#39;)
+    circle.value(55)
 &lt;/script&gt;
 </code></pre>
 <h2 id="contributing">Contributing</h2>

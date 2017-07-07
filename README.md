@@ -22,7 +22,8 @@ A standard web component to display a circle stat
 <ts-circle></ts-circle>
 <script>
 	document.registerElement('ts-circle', {prototype: CircleEl})
-	document.querySelector('ts-circle').value(55)
+	var circle = document.querySelector('ts-circle')
+	circle.value(55)
 </script>
 ```
 
